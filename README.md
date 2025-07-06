@@ -76,7 +76,6 @@ Explicação:
 
 **6. Cite uma heurística de testes para front e back-end e explique.**
 
-- **CRUD (Create, Read, Update, Delete)** é uma heurística aplicada a sistemas com persistência de dados.
 - Front-end:
   - Validar se o usuário consegue inserir, visualizar, editar e excluir dados na interface.
 - Back-end/API:
