@@ -4,30 +4,35 @@
 
 ## Parte 1 – Respostas às Perguntas Teóricas
 
-**1. O cliente adquiriu um novo modelo de máquina de cartão de crédito. Quantos testes são necessários e qual técnica utilizar?**
+**1) O cliente adquiriu um novo modelo de máquina de cartão de crédito e ela aceita as bandeiras Visa, Master, Elo, Amex e Hiper e executa duas operações para cada bandeira: débito e crédito. Quantos testes serão necessários para validação dessa máquina e qual técnica a ser utilizada?**
 
-- São 5 bandeiras (Visa, Master, Elo, Amex, Hiper), com 2 operações por bandeira (débito e crédito).
-- Total: **5 × 2 = 10 testes**.
-- Técnica utilizada: **Particionamento de Equivalência**, pois trata diferentes categorias de dados válidos.
+- São 5 bandeiras × 2 operações = **10 testes**.
+
+Explicação:
+- A técnica utilizada é o **Particionamento de Equivalência**, que consiste em dividir os dados de entrada em partições ou classes equivalentes.
+  Neste caso, cada bandeira e tipo de operação representa uma partição válida que deve ser testada para garantir cobertura adequada do comportamento esperado.
 
 ---
 
-**2. Range de BINs da Visa: qual alternativa valida corretamente?**
+**2) A bandeira Visa disponibilizou um novo range de BINs no mercado que possui seis dígitos: 232425 a 232460. Quais os testes deverão ser feitos desse range de BINs para confirmar que está funcionando?**
 
-- O intervalo informado é: **232425 a 232460**
-- Para cobrir esse range de forma eficaz, utiliza-se a **técnica de Análise de Valor Limite (Boundary Value Analysis)**.
+Alternativas:
+a) 230000, 232425, 232460  
+b) 0, 232425, 232460, 240000  
+c) 232425, 232460  
+d) 232424, 232425, 232459, 232460, 232461
 
-Essa técnica exige a validação dos **limites inferior e superior**, além de valores **imediatamente fora** desses limites (antes e depois).
+**Resposta correta: d) 232424, 232425, 232459, 232460, 232461**
 
-**Cobertura ideal:**
-- Um valor **antes** do início: `232424`
-- O **primeiro valor válido**: `232425`
-- Um valor **dentro** do intervalo: `232459`
-- O **último valor válido**: `232460`
-- Um valor **depois** do final: `232461`
-
-**Resposta correta:**
-- **d) 232424, 232425, 232459, 232460, 232461**
+Explicação:
+- A técnica correta é a **Análise de Valor Limite**.
+- Essa técnica busca validar comportamentos nos extremos dos intervalos válidos e logo fora deles.
+- Para o intervalo 232425 a 232460, os testes ideais incluem:
+  - Um valor **antes** do início: `232424`
+  - O **primeiro valor válido**: `232425`
+  - Um valor **dentro** do intervalo: `232459`
+  - O **último valor válido**: `232460`
+  - Um valor **após** o fim: `232461`
 
 ---
 
@@ -81,7 +86,7 @@ Essa técnica exige a validação dos **limites inferior e superior**, além de 
 
 **7. Ferramentas de testes automatizados por plataforma:**
 
-- **Desktop**: WinAppDriver, Winium, AutoIt  
+- **Desktop**: WinAppDriver  
 - **Web**: Selenium, Cypress, Playwright  
 - **API**: RestAssured, Postman, SoapUI  
 - **Mobile**: Appium, Espresso, XCUITest
@@ -153,24 +158,6 @@ mvn test
 
 ---
 
-## Boas práticas aplicadas
-
-- Separação por camadas: testes, páginas, utilitários
-- Uso de Page Object para reaproveitamento e organização
-- XPath dinâmico para evitar valores fixos
-- Reuso de ações e validações com classe Utils
-- Clean Code e princípios de orientação a objetos
-- Testes independentes e confiáveis com controle de estado do app
-
----
-
-## Observações finais
-
-- O projeto cobre todos os passos solicitados na prática de mobile
-- Validações foram feitas com AppiumBy, XPath e estrutura modular
-- Pronto para envio via GitHub
----
-
 ## Configuração via config.properties
 
 Este projeto utiliza um arquivo de propriedades (`config.properties`) para definir os parâmetros do dispositivo, app package e activity.  
@@ -188,3 +175,19 @@ Parâmetros configuráveis:
 - `appActivity`: activity principal do app
 
 Caso utilize um dispositivo físico ou outro emulador, ajuste o `deviceName` conforme necessário.
+
+## Boas práticas aplicadas
+
+- Separação por camadas: testes, páginas, utilitários
+- Uso de Page Object para reaproveitamento e organização
+- XPath dinâmico para evitar valores fixos
+- Reuso de ações e validações com classe Utils
+- Clean Code e princípios de orientação a objetos
+- Testes independentes e confiáveis com controle de estado do app
+
+---
+
+## Observações finais
+
+- O projeto cobre todos os passos solicitados na prática de mobile
+---
