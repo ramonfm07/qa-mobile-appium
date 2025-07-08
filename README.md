@@ -189,4 +189,14 @@ Caso utilize um dispositivo físico ou outro emulador, ajuste o `deviceName` con
 ## Observações finais
 
 - O projeto cobre todos os passos solicitados na prática de mobile
+
+## Melhorias implementadas
+
+- Adicionado `@DisplayName` em todos os testes para melhorar legibilidade nos relatórios e saídas de execução
+- Refatoração de seletores frágeis baseados em `@text` para uso de `@hint`, garantindo maior estabilidade dos testes
+- Atualização nos testes negativos para refletir corretamente o comportamento real do app de contatos do Android
+- Criação de uma suíte de testes com JUnit 5 para executar todos os cenários de forma agrupada
+- Uso de JavaFaker para geração dinâmica de dados
+- Análise crítica de cenários não válidos com base em comportamento da aplicação real
+
 ---
