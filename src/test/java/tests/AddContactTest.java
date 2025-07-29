@@ -51,9 +51,9 @@ public class AddContactTest extends BaseTest {
     @DisplayName("Deve adicionar múltiplos contatos com sucesso")
     public void deveAdicionarMultiplosContatosComSucesso() {
         List<ContactData> contatos = Arrays.asList(
-                new ContactData("Ramon", "QA", "11999999999", "ramon.qa@email.com"),
+                new ContactData("Diego", "PO", "11999999998", "diego.qa@email.com"),
                 new ContactData("Lucas", "Dev", "11988887777", "lucas.dev@email.com"),
-                new ContactData("Ana", "Teste", "11977776666", "ana.teste@email.com")
+                new ContactData("Ana", "QA", "11977776666", "ana.teste@email.com")
         );
 
         for (ContactData contato : contatos) {
